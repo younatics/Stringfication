@@ -24,21 +24,36 @@ public extension Mirror {
     public func values() -> [String] {
         var values = [String]()
         for value in self.children {
-            if let valueArray = value.value as? Array<Any> {
-                for arrayValue in valueArray {
-                    values.append(convertOptional(string: String(describing: arrayValue)))
-                }
-            } else {
-                values.append(convertOptional(string: String(describing: value.value)))
-            }
+            values = values + checkArray(object:value.value)
         }
         
         return values
     }
     
+    private func checkArray(object: Any) -> [String] {
+        var values = [String]()
+
+        if let valueArray = object as? Array<Any> {
+            for arrayValue in valueArray {
+                values = values + checkArray(object: arrayValue)
+            }
+        } else {
+            let objectString = String(describing: object)
+            if objectString != "nil" {
+                values.append(convertOptional(string: objectString))
+            }
+        }
+        return values
+    }
+    
     private func convertOptional(string: String) -> String {
+        print(string)
         if string.hasPrefix("Optional(") && string.hasSuffix(")") {
-            return string.substring(10..<string.characters.count-2)
+            if Int(string.substring(10..<string.characters.count-2)) != nil {
+                return string.substring(9..<string.characters.count-1)
+            } else {
+                return string.substring(10..<string.characters.count-2)
+            }
         }
         
         return string

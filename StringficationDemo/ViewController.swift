@@ -9,10 +9,12 @@
 import UIKit
 import Stringfication
 
-class YNModel: Stringfication {
-    var any: Any?
-    var array: [[String]]?
-    var msg: Int?
+class Model: Stringfication {
+    var anyProperty: Any?
+    var arrayProperty: [[String]]?
+    var intProperty: Int?
+    var floatProperty: Float?
+    var stringProperty: String?
 }
 
 
@@ -22,13 +24,14 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let ynModel = YNModel()
-        ynModel.any = "title string"
-        ynModel.array = [["a","b","c"],["1","2","3"]]
-        ynModel.msg = 777
+        let model = Model()
+        model.anyProperty = [["This","is","Stringfication"],[1,2,3]]
+        model.arrayProperty = [["This","is","Stringfication"],["Do","what","you","want"]]
+        model.intProperty = 777
+        model.stringProperty = "younatics"
         
-        print(ynModel.stringfication.properties())
-        print(ynModel.stringfication.values())
+        print(model.stringfication.properties())
+        print(model.stringfication.values())
         
         
     }
