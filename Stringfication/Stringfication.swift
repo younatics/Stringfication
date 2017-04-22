@@ -8,31 +8,48 @@
 
 import Foundation
 
-public class Stringfication: NSObject {
-    var ynMirror: Mirror?
-    
-    public init(reflecting subject: Any) {
-        self.ynMirror = Mirror(reflecting: subject)
+public protocol Stringfication { }
+
+public extension Stringfication {
+    public var stringfication: Mirror {
+        return Mirror(reflecting: self)
+    }
+}
+
+public extension Mirror {
+    public func properties() -> [String] {
+        return self.children.flatMap { $0.label }
     }
     
-    open func properties() -> [String] {
-        guard let _ynMirror = ynMirror else { return [String]() }
-        return _ynMirror.children.flatMap { $0.label }
-    }
-    
-    open func values()  {
-        guard let _ynMirror = ynMirror else { return }
-        for value in _ynMirror.children {
-            let value = String(describing: value.value)
-            print(value)
+    public func values() -> [String] {
+        var values = [String]()
+        for value in self.children {
+            if let valueArray = value.value as? Array<Any> {
+                for arrayValue in valueArray {
+                    values.append(convertOptional(string: String(describing: arrayValue)))
+                }
+            } else {
+                values.append(convertOptional(string: String(describing: value.value)))
+            }
         }
         
-        print(_ynMirror.displayStyle)
-        print(_ynMirror.superclassMirror)
-        print(_ynMirror.subjectType)
-        
-        //        return _ynMirror.children.flatMap { $0.value as [String] }
+        return values
     }
     
+    private func convertOptional(string: String) -> String {
+        if string.hasPrefix("Optional(") && string.hasSuffix(")") {
+            return string.substring(10..<string.characters.count-2)
+        }
+        
+        return string
+    }
+}
+
+private extension String {
+    func substring(_ r: Range<Int>) -> String {
+        let fromIndex = self.index(self.startIndex, offsetBy: r.lowerBound)
+        let toIndex = self.index(self.startIndex, offsetBy: r.upperBound)
+        return self.substring(with: Range<String.Index>(uncheckedBounds: (lower: fromIndex, upper: toIndex)))
+    }
     
 }

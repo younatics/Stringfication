@@ -14,7 +14,33 @@
 		19FA90D51EAB0E2D00201D43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19FA90D41EAB0E2D00201D43 /* Assets.xcassets */; };
 		19FA90D81EAB0E2D00201D43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19FA90D61EAB0E2D00201D43 /* LaunchScreen.storyboard */; };
 		19FA90DE1EAB0E5200201D43 /* Stringfication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19FA90DD1EAB0E5200201D43 /* Stringfication.swift */; };
+		19FA90DF1EAB0F1500201D43 /* Stringfication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19FA90BC1EAB0E1600201D43 /* Stringfication.framework */; };
+		19FA90E01EAB0F1500201D43 /* Stringfication.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 19FA90BC1EAB0E1600201D43 /* Stringfication.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		19FA90E11EAB0F1500201D43 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 19FA90B31EAB0E1600201D43 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 19FA90BB1EAB0E1600201D43;
+			remoteInfo = Stringfication;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		19FA90E31EAB0F1500201D43 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				19FA90E01EAB0F1500201D43 /* Stringfication.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		19FA90BC1EAB0E1600201D43 /* Stringfication.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Stringfication.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19FA90DF1EAB0F1500201D43 /* Stringfication.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,10 +155,12 @@
 				19FA90C71EAB0E2D00201D43 /* Sources */,
 				19FA90C81EAB0E2D00201D43 /* Frameworks */,
 				19FA90C91EAB0E2D00201D43 /* Resources */,
+				19FA90E31EAB0F1500201D43 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				19FA90E21EAB0F1500201D43 /* PBXTargetDependency */,
 			);
 			name = StringficationDemo;
 			productName = StringficationDemo;
@@ -219,6 +248,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		19FA90E21EAB0F1500201D43 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 19FA90BB1EAB0E1600201D43 /* Stringfication */;
+			targetProxy = 19FA90E11EAB0F1500201D43 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		19FA90D11EAB0E2D00201D43 /* Main.storyboard */ = {
@@ -385,6 +422,7 @@
 		19FA90DB1EAB0E2D00201D43 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4G7K3CN2JU;
 				INFOPLIST_FILE = StringficationDemo/Info.plist;
@@ -398,6 +436,7 @@
 		19FA90DC1EAB0E2D00201D43 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 4G7K3CN2JU;
 				INFOPLIST_FILE = StringficationDemo/Info.plist;

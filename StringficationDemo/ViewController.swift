@@ -7,27 +7,30 @@
 //
 
 import UIKit
+import Stringfication
 
-class YNModel: NSObject {
+class YNModel: Stringfication {
     var any: Any?
-    var array: [String]?
-    var msg: String?
+    var array: [[String]]?
+    var msg: Int?
 }
 
 
 class ViewController: UIViewController {
+    var msg: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let ynModel = YNModel()
         ynModel.any = "title string"
-        ynModel.array = ["a","b","c"]
-        ynModel.msg = "message"
+        ynModel.array = [["a","b","c"],["1","2","3"]]
+        ynModel.msg = 777
         
-        let ynMirror = YNMirror(reflecting: ynModel)
-        print(ynMirror.properties())
-        ynMirror.values()
+        print(ynModel.stringfication.properties())
+        print(ynModel.stringfication.values())
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
