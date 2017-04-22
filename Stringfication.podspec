@@ -7,26 +7,24 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'YNSearch'
-  s.version          = '0.3.1'
-  s.summary          = 'Awesome fully customizable search view written in Swift 3'
+  s.name             = 'Stringfication'
+  s.version          = '0.1.0'
+  s.summary          = 'Get all your object to string!'
 
   s.description      = <<-DESC
-                        Awesome search view, written in Swift 3, appears search view like Pinterset Search view. You can fully customizable this library
+                        Magic will be happened when you use Stringfication!
                         DESC
 
-  s.homepage         = 'https://github.com/younatics/YNSearch'
-  s.screenshots      = 'https://raw.githubusercontent.com/younatics/YNDropDownMenu/master/Images/YNDropDownMenu.gif'
+  s.homepage         = 'https://github.com/younatics/Stringfication'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { "Seungyoun Yi" => "younatics@gmail.com" }
 
-  s.source           = { :git => 'https://github.com/younatics/YNSearch.git', :tag => s.version.to_s }
-  s.source_files     = 'YNSearch/*.swift'
-  s.resources        = "YNSearch/*.xcassets"
+  s.source           = { :git => 'https://github.com/younatics/Stringfication.git', :tag => s.version.to_s }
+  s.source_files     = 'Stringfication/*.swift'
 
   s.ios.deployment_target = '8.0'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  s.frameworks = 'UIKit'
+  s.frameworks = 'Foundation'
   s.requires_arc = true
 end
