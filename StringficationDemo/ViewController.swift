@@ -9,7 +9,7 @@
 import UIKit
 import Stringfication
 
-class Model: Stringfication {
+struct Model: Stringfication {
     var anyProperty: Any?
     var arrayProperty: [[String]]?
     var intProperty: Int?
@@ -19,20 +19,19 @@ class Model: Stringfication {
 
 
 class ViewController: UIViewController {
-    var msg: UIButton!
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let model = Model()
-        model.anyProperty = [["This","is","Stringfication"],[1,2,3]]
+        var model = Model()
+        model.anyProperty = [["Developed","by","SeungyounYi"],[1,2,3]]
         model.arrayProperty = [["This","is","Stringfication"],["Do","what","you","want"]]
         model.intProperty = 777
+        model.floatProperty = 99.99
         model.stringProperty = "younatics"
         
         print(model.stringfication.properties())
         print(model.stringfication.values())
-        
+        print(model.stringfication.all())
         
     }
 

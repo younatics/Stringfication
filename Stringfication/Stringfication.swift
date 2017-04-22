@@ -30,6 +30,10 @@ public extension Mirror {
         return values
     }
     
+    public func all() -> [String] {
+        return self.children.flatMap { $0.label } + values()
+    }
+    
     private func checkArray(object: Any) -> [String] {
         var values = [String]()
 
@@ -47,12 +51,13 @@ public extension Mirror {
     }
     
     private func convertOptional(string: String) -> String {
-        print(string)
         if string.hasPrefix("Optional(") && string.hasSuffix(")") {
-            if Int(string.substring(10..<string.characters.count-2)) != nil {
+            let nonOptionalString = string.substring(10..<string.characters.count-2)
+            
+            if nonOptionalString.isInt || nonOptionalString.isDouble || nonOptionalString.isFloat {
                 return string.substring(9..<string.characters.count-1)
             } else {
-                return string.substring(10..<string.characters.count-2)
+                return nonOptionalString
             }
         }
         
@@ -61,6 +66,18 @@ public extension Mirror {
 }
 
 private extension String {
+    var isInt: Bool {
+        return Int(self) != nil
+    }
+    
+    var isDouble: Bool {
+        return Double(self) != nil
+    }
+    
+    var isFloat: Bool {
+        return Float(self) != nil
+    }
+    
     func substring(_ r: Range<Int>) -> String {
         let fromIndex = self.index(self.startIndex, offsetBy: r.lowerBound)
         let toIndex = self.index(self.startIndex, offsetBy: r.upperBound)
