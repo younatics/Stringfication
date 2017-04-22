@@ -17,7 +17,6 @@ struct Model: Stringfication {
     var stringProperty: String?
 }
 
-
 class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
