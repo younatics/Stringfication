@@ -8,8 +8,10 @@
 
 import Foundation
 
+/// Inherit this method to get all string
 public protocol Stringfication { }
 
+/// This will return Mirror
 public extension Stringfication {
     public var stringfication: Mirror {
         return Mirror(reflecting: self)
