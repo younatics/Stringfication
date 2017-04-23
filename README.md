@@ -13,7 +13,7 @@
 See [CHANGELOG](https://github.com/younatics/Stringfication/blob/master/CHANGELOG.md) for details
 
 ## Intoduction
-🔨 Make all objects to String!
+🔨 Make all objects to String! This library will be useful when you develop search function :)
 
 ## Requirements
 
