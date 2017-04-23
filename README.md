@@ -73,7 +73,6 @@ Get all
 print(model.stringfication.all())
 // -> ["anyProperty", "arrayProperty", "intProperty", "floatProperty", "stringProperty", "Developed", "by", "SeungyounYi", "1", "2", "3", "This", "is", "Stringfication", "Do", "what", "you", "want", "777", "99.9899979", "younatics"]
 ```
-Done!
 
 ## References
 #### Please tell me or make pull request if you use this library in your application :) 
