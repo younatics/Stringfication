@@ -7,7 +7,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/Stringfication.svg?style=flat)](http://cocoapods.org/pods/Stringfication)
 [![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
 
-#### See [`Objectification`](https://github.com/younatics/Objectification) if you want to get objects where string is contained in object
+#### See [Objectification](https://github.com/younatics/Objectification) if you want to get objects where string is contained in object
 
 ## Updates
 See [CHANGELOG](https://github.com/younatics/Stringfication/blob/master/CHANGELOG.md) for details
