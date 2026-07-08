@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Stringfication'
-  s.version          = '1.0.0'
-  s.summary          = 'Get all your object to string!'
+  s.version          = '2.0.0'
+  s.summary          = 'Get all your object to string! (Swift 6)'
 
   s.description      = <<-DESC
                         Magic will be happened when you use Stringfication!
@@ -22,7 +22,8 @@ Pod::Spec.new do |s|
   s.source           = { :git => 'https://github.com/younatics/Stringfication.git', :tag => s.version.to_s }
   s.source_files     = 'Stringfication/*.swift'
 
-  s.ios.deployment_target = '8.0'
+  s.swift_version = '6.0'
+  s.ios.deployment_target = '13.0'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'Foundation'

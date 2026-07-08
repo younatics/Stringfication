@@ -5,7 +5,7 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/younatics/Stringfication/blob/master/LICENSE)
 [![Build Status](https://travis-ci.org/younatics/Stringfication.svg?branch=master)](https://travis-ci.org/younatics/Stringfication)
 [![Platform](https://img.shields.io/cocoapods/p/Stringfication.svg?style=flat)](http://cocoapods.org/pods/Stringfication)
-[![Swift 3.0](https://img.shields.io/badge/Swift-3.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
+[![Swift 6.0](https://img.shields.io/badge/Swift-6.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
 
 #### See [Objectification](https://github.com/younatics/Objectification) if you want to get objects where string is contained in object
 
@@ -17,9 +17,25 @@ See [CHANGELOG](https://github.com/younatics/Stringfication/blob/master/CHANGELO
 
 ## Requirements
 
-`Stringfication` is written in Swift 3. Compatible with iOS 8.0+
+`Stringfication` is written in Swift 6. Compatible with iOS 13.0+. Supports Swift Package Manager, CocoaPods, and Carthage.
 
 ## Installation
+
+### Swift Package Manager
+
+In Xcode, choose **File ▸ Add Package Dependencies…** and enter:
+
+```
+https://github.com/younatics/Stringfication.git
+```
+
+Or add it to your `Package.swift`:
+
+```swift
+dependencies: [
+    .package(url: "https://github.com/younatics/Stringfication.git", from: "2.0.0")
+]
+```
 
 ### Cocoapods
 

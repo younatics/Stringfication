@@ -13,17 +13,17 @@ public protocol Stringfication { }
 
 /// This will return Mirror
 public extension Stringfication {
-    public var stringfication: Mirror {
+    var stringfication: Mirror {
         return Mirror(reflecting: self)
     }
 }
 
 public extension Mirror {
-    public func properties() -> [String] {
-        return self.children.flatMap { $0.label }
+    func properties() -> [String] {
+        return self.children.compactMap { $0.label }
     }
     
-    public func values() -> [String] {
+    func values() -> [String] {
         var values = [String]()
         for value in self.children {
             values = values + checkArray(object:value.value)
@@ -32,8 +32,8 @@ public extension Mirror {
         return values
     }
     
-    public func all() -> [String] {
-        return self.children.flatMap { $0.label } + values()
+    func all() -> [String] {
+        return self.children.compactMap { $0.label } + values()
     }
     
     private func checkArray(object: Any) -> [String] {
@@ -54,10 +54,10 @@ public extension Mirror {
     
     private func convertOptional(string: String) -> String {
         if string.hasPrefix("Optional(") && string.hasSuffix(")") {
-            let nonOptionalString = string.substring(10..<string.characters.count-2)
+            let nonOptionalString = string.substring(10..<string.count-2)
             
             if nonOptionalString.isInt || nonOptionalString.isDouble || nonOptionalString.isFloat {
-                return string.substring(9..<string.characters.count-1)
+                return string.substring(9..<string.count-1)
             } else {
                 return nonOptionalString
             }
@@ -83,6 +83,6 @@ private extension String {
     func substring(_ r: Range<Int>) -> String {
         let fromIndex = self.index(self.startIndex, offsetBy: r.lowerBound)
         let toIndex = self.index(self.startIndex, offsetBy: r.upperBound)
-        return self.substring(with: Range<String.Index>(uncheckedBounds: (lower: fromIndex, upper: toIndex)))
+        return String(self[fromIndex..<toIndex])
     }
 }
