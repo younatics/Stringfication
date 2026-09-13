@@ -1,11 +1,10 @@
 # Stringfication
 
-[![Version](https://img.shields.io/cocoapods/v/Stringfication.svg?style=flat)](http://cocoapods.org/pods/Stringfication)
-[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/younatics/Stringfication/blob/master/LICENSE)
-[![Build Status](https://travis-ci.org/younatics/Stringfication.svg?branch=master)](https://travis-ci.org/younatics/Stringfication)
-[![Platform](https://img.shields.io/cocoapods/p/Stringfication.svg?style=flat)](http://cocoapods.org/pods/Stringfication)
+[![Swift Package Manager](https://img.shields.io/badge/Swift_Package_Manager-compatible-brightgreen.svg?style=flat)](https://www.swift.org/package-manager/)
+[![CocoaPods](https://img.shields.io/cocoapods/v/Stringfication.svg?style=flat)](https://cocoapods.org/pods/Stringfication)
+[![Platform](https://img.shields.io/badge/platform-iOS%2013.0%2B-lightgrey.svg?style=flat)](https://github.com/younatics/Stringfication/blob/master/Package.swift)
 [![Swift 6.0](https://img.shields.io/badge/Swift-6.0-orange.svg?style=flat)](https://developer.apple.com/swift/)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)](https://github.com/younatics/Stringfication/blob/master/LICENSE)
 
 #### See [Objectification](https://github.com/younatics/Objectification) if you want to get objects where string is contained in object
 
@@ -17,7 +16,7 @@ See [CHANGELOG](https://github.com/younatics/Stringfication/blob/master/CHANGELO
 
 ## Requirements
 
-`Stringfication` is written in Swift 6. Compatible with iOS 13.0+. Supports Swift Package Manager, CocoaPods, and Carthage.
+`Stringfication` requires Swift 6.0 and iOS 13.0 or later. It supports Swift Package Manager and CocoaPods.
 
 ## Installation
 
@@ -37,17 +36,13 @@ dependencies: [
 ]
 ```
 
-### Cocoapods
+### CocoaPods
 
 Stringfication is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'Stringfication'
-```
-### Carthage
-```
-github "younatics/Stringfication"
+pod 'Stringfication', '2.0.0'
 ```
 
 ## Usage
@@ -83,13 +78,13 @@ print(model.stringfication.properties())
 Get values 
 ```swift
 print(model.stringfication.values())
-// -> ["Developed", "by", "SeungyounYi", "1", "2", "3", "This", "is", "Stringfication", "Do", "what", "you", "want", "777", "99.9899979", "younatics"]
+// -> ["Developed", "by", "SeungyounYi", "1", "2", "3", "This", "is", "Stringfication", "Do", "what", "you", "want", "777", "99.99", "younatics"]
 ```
 
 Get all 
 ```swift
 print(model.stringfication.all())
-// -> ["anyProperty", "arrayProperty", "intProperty", "floatProperty", "stringProperty", "Developed", "by", "SeungyounYi", "1", "2", "3", "This", "is", "Stringfication", "Do", "what", "you", "want", "777", "99.9899979", "younatics"]
+// -> ["anyProperty", "arrayProperty", "intProperty", "floatProperty", "stringProperty", "Developed", "by", "SeungyounYi", "1", "2", "3", "This", "is", "Stringfication", "Do", "what", "you", "want", "777", "99.99", "younatics"]
 ```
 
 ## References
@@ -100,5 +95,3 @@ print(model.stringfication.all())
 
 ## License
 Stringfication is available under the MIT license. See the LICENSE file for more info.
-
-
