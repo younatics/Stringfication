@@ -1,4 +1,7 @@
 # Updates
+## [v2.1.0](https://github.com/younatics/Stringfication/releases/tag/2.1.0)
+* Raise the minimum deployment target to iOS 15.0 (Xcode 26/27 no longer build for iOS 13/14)
+
 ## [v2.0.0](https://github.com/younatics/Stringfication/releases/tag/2.0.0)
 * Updated the library to Swift 6 and raised the deployment target to iOS 13.0.
 * Added Swift Package Manager support and unit tests.

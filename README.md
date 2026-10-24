@@ -16,7 +16,7 @@ See [CHANGELOG](https://github.com/younatics/Stringfication/blob/master/CHANGELO
 
 ## Requirements
 
-`Stringfication` requires Swift 6.0 and iOS 13.0 or later. It supports Swift Package Manager and CocoaPods.
+`Stringfication` requires Swift 6.0 and iOS 15.0 or later. It supports Swift Package Manager and CocoaPods.
 
 ## Installation
 
